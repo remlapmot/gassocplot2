@@ -559,7 +559,7 @@ assoc_plot <- function(data, corr = NULL, corr.top = NULL, ylab = NULL, title = 
   data$chr <- as.integer(data$chr)
   data$pos <- as.integer(data$pos)
   if (type == "log10p") {
-    data$stats <- -(log(2) + pnorm(-abs(as.numeric(data$z)), log.p = T)) / log(10)
+    data$stats <- -(log(2) + stats::pnorm(-abs(as.numeric(data$z)), log.p = T)) / log(10)
     data$stats[data$stats > 1000] <- 1000
   } else {
     data$stats <- as.numeric(data$prob)
@@ -1054,7 +1054,7 @@ stack_assoc_plot <- function(markers, z, corr = NULL, corr.top = NULL, traits, y
   for (i in length(traits):1) {
     if (type == "log10p") {
       data <- data.frame(marker = as.character(markers$marker), chr = as.integer(markers$chr), pos = as.integer(markers$pos), stats = as.numeric(z[, i]), stringsAsFactors = F)
-      data$stats <- -(log(2) + pnorm(-abs(data$stats), log.p = T)) / log(10)
+      data$stats <- -(log(2) + stats::pnorm(-abs(data$stats), log.p = T)) / log(10)
       data$stats[data$stats > 1000] <- 1000
     } else {
       data <- data.frame(marker = as.character(markers$marker), chr = as.integer(markers$chr), pos = as.integer(markers$pos), stats = as.numeric(z[, i]), stringsAsFactors = F)
