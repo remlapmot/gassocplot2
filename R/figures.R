@@ -545,7 +545,7 @@ assoc_plot <- function(data, corr = NULL, corr.top = NULL, ylab = NULL, title = 
   if (length(unique(data$chr)) > 1) stop("there should only be markers from one chromosome in the markers dataset")
   if (!(data$chr[1] %in% 1:22)) stop("the plotting tool is only for autosomal chromosomes")
   if (any(is.na(data))) stop("there are missing values in the dataset")
-  if (class(data$pos) != "integer") stop("the pos variable has to be an integer")
+  if (!inherits(data$pos, "integer")) stop("the pos variable has to be an integer")
   if (is.null(corr) & !is.null(corr.top) & is.null(top.marker)) stop("top.marker must be defined if corr.top is provided")
   if (is.null(corr) & !is.null(corr.top)) {
     if (length(corr.top) != nrow(data)) stop("corr.top has to have the same length as the number of rows in the markers dataset")
@@ -968,7 +968,7 @@ stack_assoc_plot <- function(markers, z, corr = NULL, corr.top = NULL, traits, y
   if (!(markers$chr[1] %in% 1:22)) stop("the plotting tool is only for autosomal chromosomes")
   if (any(is.na(markers))) stop("there are missing markers in your marker dataset")
   # if(any(is.na(z))) stop("there are missing values in the Z-score matrix")
-  if (class(markers$pos) != "integer") stop("the pos variable has to be an integer")
+  if (!inherits(markers$pos, "integer")) stop("the pos variable has to be an integer")
   if (is.null(corr) & !is.null(corr.top) & is.null(top.marker)) stop("top.marker must be defined if corr.top is provided")
   if (is.null(corr) & !is.null(corr.top)) {
     if (length(corr.top) != nrow(markers)) stop("corr.top has to have the same length as the number of rows in the markers dataset")
