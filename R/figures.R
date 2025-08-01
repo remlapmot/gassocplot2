@@ -467,7 +467,7 @@ plot_assoc_combined <- function(recombination.plot, gene.plot, marker.plot, titl
   g3 <- gtable_add_cols(g3, g3$widths[g3$layout[ia, ]$l], length(g3$widths) - 1)
   g3 <- gtable_add_grob(g3, ax, pp$t, length(g3$widths) - 1, pp$b)
   g3 <- gtable_add_cols(g3, g3$widths[g3$layout[ia, ]$l], length(g3$widths) - 1)
-  g3 <- gtable_add_grob(g3, list(textGrob("", rot = -90, gp = gpar(fontsize = 16, col = gray(.88)))), pp$t, length(g3$widths) - 1, pp$b)
+  g3 <- gtable_add_grob(g3, list(textGrob("", rot = -90, gp = gpar(fontsize = 16, col = grDevices::gray(.88)))), pp$t, length(g3$widths) - 1, pp$b)
   g <- gtable:::rbind_gtable(g, g3, "last")
   panels <- g$layout$t[grep("panel", g$layout$name)]
   g$heights[panels[1]] <- unit(3, "null")
@@ -884,7 +884,7 @@ plot_regional_gene_assoc <- function(recombination.plot, marker.plot, gene.plot,
   g3 <- gtable_add_cols(g3, g3$widths[g3$layout[ia, ]$l], length(g3$widths) - 1)
   g3 <- gtable_add_grob(g3, ax, pp$t, length(g3$widths) - 1, pp$b)
   g3 <- gtable_add_cols(g3, g3$widths[g3$layout[ia, ]$l], length(g3$widths) - 1)
-  g3 <- gtable_add_grob(g3, list(textGrob("", rot = -90, gp = gpar(fontsize = 16, col = gray(.88)))), pp$t, length(g3$widths) - 1, pp$b)
+  g3 <- gtable_add_grob(g3, list(textGrob("", rot = -90, gp = gpar(fontsize = 16, col = grDevices::gray(.88)))), pp$t, length(g3$widths) - 1, pp$b)
   g <- gtable:::rbind_gtable(g, g3, "last")
   panels <- g$layout$t[grep("panel", g$layout$name)]
   g$heights[panels[1]] <- unit(3, "null")
