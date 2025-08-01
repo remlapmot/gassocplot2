@@ -279,7 +279,7 @@ plot_assoc <- function(data, corr = NULL, corr.top = NULL, x.min, x.max, top.mar
   if (is.null(corr) & !is.null(corr.top) & is.null(top.marker)) stop("top.marker must be defined if corr.top is provided")
 
   # Missing data
-  miss <- !complete.cases(data)
+  miss <- !stats::complete.cases(data)
   if (!is.null(corr)) {
     corr <- corr[!miss, !miss, drop = F]
   }
@@ -683,7 +683,7 @@ plot_assoc_stack <- function(data, corr = NULL, corr.top = NULL, x.min, x.max, t
   if (is.null(corr) & is.null(corr.top)) stop("no correlation statistics were input")
 
   # Missing data
-  miss <- !complete.cases(data)
+  miss <- !stats::complete.cases(data)
   if (!is.null(corr)) {
     corr <- corr[!miss, !miss, drop = F]
   }
