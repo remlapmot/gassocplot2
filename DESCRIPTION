@@ -17,6 +17,8 @@ Imports:
     gtable
 Suggests:
     knitr
+URL: https://github.com/jrs95/gassocplot2,
+    https://mrcieu.r-universe.dev/gassocplot2
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz
